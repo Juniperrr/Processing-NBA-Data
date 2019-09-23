@@ -1,4 +1,3 @@
-// nba.js
 hoffy = require('./hoffy');
 function bestPasser(data) {
     var best_passer = data.reduce((prevHighest, currPlayer, idx, data) => {
@@ -27,13 +26,6 @@ function reboundTotals(data) {
     return reboundTotals;
 }
 
-/*
-function bucket(arr, fn) {
-    const tru = arr.filter(fn);
-    const fal = arr.filter(val => fn(val) === false);
-    return [tru,fal];
-}
-*/
 module.exports = {
     bestPasser: bestPasser,
     getTeamCities: getTeamCities,

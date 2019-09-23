@@ -1,18 +1,18 @@
 var fs = require("fs");
 
 function sum(num1, num2, ... numn) {
-    if (num1 === undefined) { //No argument
+    if (num1 === undefined) { 
         return 0;
     }
-    else if (num1 !== undefined) { //num1 + ?
-        if (num2 === undefined) { //num1
+    else if (num1 !== undefined) { 
+        if (num2 === undefined) { 
             return num1;
         }
-        else {                  //num1 + num2. num1 + num2 + ?
-            if (numn === undefined){ //num1 + num2
+        else {                  
+            if (numn === undefined){ 
                 return num1 + num2;
             }
-            else {                  //num1 + num2 + numn
+            else {                  
                 return num1 + num2 + numn.reduce((previous, current) => {
                     return previous + current;
                 });
@@ -111,9 +111,9 @@ function readAndExtractWith(extractor) {
 
 function rowsToObjects(data) { 
     var headers = data.headers;
-    var rows = data.rows; //[[1, 2, 3], [4, 5, 6], [7, 8, 9]];
+    var rows = data.rows; 
     var initial = {};
-    return rows.map(r => r.reduce((accumulator, currVal, idx) => { //o: , c: 1,2,3, i
+    return rows.map(r => r.reduce((accumulator, currVal, idx) => { 
         return Object.assign(accumulator, {[headers[idx]]: currVal} )
     },{}));
 }
